@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Title of the application! -->
+    <string name="app_name">BillSplittr</string>
+    <!-- Number of guests present -->
+    <string name="guest_hint">Number of guests</string>
+    <!-- Button name in action overflow -->
+    <string name="action_settings">Settings</string>
+    <!-- Welcome text to application -->
+    <string name="welcome_text">Welcome to BillSplittr! We hope you enjoy your experience.</string>
+    <!-- Submit button -->
+    <string name="submit">Submit</string>
+    <string name="title_activity_personal_purchases">PersonalPurchases</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <!-- <string name="app_name">DynamicViews</string> -->
+    <string name="title_activity_main">Dynamic Views</string>
+    <string name="button_add_new_text">Add new</string>
+    <string name="button_delete_row_description">Delete</string>
+    <string-array name="categories">
+        <item >HOME</item>
+        <item >WORK</item>
+        <item >MOBILE</item>
+        <item >OTHER</item>
+    </string-array>
+
+</resources>
