@@ -9,6 +9,8 @@
     <string name="action_settings">Settings</string>
     <!-- Welcome text to application -->
     <string name="welcome_text">Welcome to BillSplittr! We hope you enjoy your experience.</string>
+    <!-- Total Cost -->
+	<string name="total_cost">Total Cost</string>
     <!-- Submit button -->
     <string name="submit">Submit</string>
     <string name="title_activity_personal_purchases">PersonalPurchases</string>

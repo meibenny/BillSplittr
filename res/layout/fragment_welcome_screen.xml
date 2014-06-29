@@ -14,27 +14,37 @@
         android:layout_height="wrap_content"
         android:text="@string/welcome_text" />
 
+    <EditText
+        android:id="@+id/guest_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/guest_hint"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/cost_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/guest_input"
+        android:ems="10"
+        android:hint="@string/total_cost"
+        android:inputType="numberDecimal" >
+
+        <requestFocus />
+    </EditText>
+
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/edit_message"
-        android:layout_alignRight="@+id/textView1"
-        android:text="@string/submit"
-        android:onClick="sendGuests" />
-
-    <EditText
-        android:id="@+id/edit_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="15dp"
-        android:layout_toLeftOf="@+id/button1"
-        android:ems="10"
-        android:hint="@string/guest_hint"
-        android:inputType="number" >
-
-        <requestFocus />
-    </EditText>
+        android:layout_alignLeft="@+id/cost_input"
+        android:layout_below="@+id/cost_input"
+        android:layout_marginTop="20dp"
+        android:text="@string/submit" 
+        android:onClick="sendMessage"/>
 
 </RelativeLayout>

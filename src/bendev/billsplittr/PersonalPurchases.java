@@ -1,25 +1,46 @@
 package bendev.billsplittr;
 
+import java.util.ArrayList;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
+import android.widget.TextView;
 
 public class PersonalPurchases extends ActionBarActivity {
 	
-
+	ArrayList<Double> individualCost = new ArrayList<Double>();
+	int	guestCount;
+	Double baseCost;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_personal_purchases);
 		Intent intent = getIntent();
-		String message = intent.getStringExtra(WelcomeScreen.EXTRA_MESSAGE);
+		String numGuests = intent.getStringExtra(WelcomeScreen.EXTRA_MESSAGE);
+		String totalCost = intent.getStringExtra(WelcomeScreen.TOTAL_COST);
+		LinearLayout linearLayout = (LinearLayout) findViewById(R.id.editTextGroupLayout);
+		
+		//TextView guestView = new TextView(this);
+		//guestView.setText(numGuests);
+		//TextView costView = new TextView(this);
+		//costView.setText(totalCost);
+		//linearLayout.addView(guestView);
+		//linearLayout.addView(costView);	
+		guestCount = Integer.parseInt(numGuests);
+		baseCost = Double.parseDouble(totalCost)/guestCount;
+		for(int i = 0; i < guestCount; i++){
+			TextView patrons = new TextView(this);
+			patrons.setText("Guest " + (i+1) + ": $" + baseCost);
+			linearLayout.addView(patrons);
+			
+		}
 //		TextView textView = new TextView(this);
 //		textView.setTextSize(40);
 //		textView.setText(message);
@@ -30,16 +51,19 @@ public class PersonalPurchases extends ActionBarActivity {
 //
 	
 	public void inject(View view){
-		LinearLayout linearLayout = (LinearLayout) findViewById(R.id.editTextGroupLayout);
-	    EditText editTextView = new EditText(this);
-	    editTextView.setGravity(Gravity.CENTER);
+		LinearLayout linearLayout = (LinearLayout) findViewById(R.id.stringTextGroupLayout);
+	    //EditText editTextView = new EditText(this);
+	    //editTextView.setGravity(Gravity.CENTER);
 
 	    LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT,
 	        LayoutParams.WRAP_CONTENT, 1);
+	    TextView myText = new TextView(this);
+	    myText.setText("Hello world");
+	    myText.setLayoutParams(params);
+	    linearLayout.addView(myText);
+	    //editTextView.setLayoutParams(params);
 
-	    editTextView.setLayoutParams(params);
-
-	    linearLayout.addView(editTextView);
+	    //linearLayout.addView(editTextView);
 		
 	}
 	@Override

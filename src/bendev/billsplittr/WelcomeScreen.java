@@ -13,6 +13,7 @@ import android.widget.EditText;
 
 public class WelcomeScreen extends ActionBarActivity {
 	public final static String EXTRA_MESSAGE = "bendev.billsplittr";
+	public final static String TOTAL_COST = "total.cost";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,11 +47,14 @@ public class WelcomeScreen extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
     
-    public void sendGuests(View view){
+    public void sendMessage(View view){
     	Intent intent = new Intent(this, PersonalPurchases.class);
-    	EditText editText = (EditText) findViewById(R.id.edit_message);
-    	String message = editText.getText().toString();
-    	intent.putExtra(EXTRA_MESSAGE, message);
+    	EditText editText = (EditText) findViewById(R.id.guest_input);
+    	String numGuests = editText.getText().toString();
+    	editText = (EditText) findViewById(R.id.cost_input);
+    	String cost = editText.getText().toString();
+    	intent.putExtra(EXTRA_MESSAGE, numGuests);
+    	intent.putExtra(TOTAL_COST, cost);
     	startActivity(intent);
     }
 
